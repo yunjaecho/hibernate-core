@@ -1,24 +1,26 @@
 package com.infiniteskills.data;
 
-import com.infiniteskills.data.entiity.TimeTest;
+import com.infiniteskills.data.entiity.Address;
+import com.infiniteskills.data.entiity.Credential;
 import com.infiniteskills.data.entiity.User;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by USER on 2018-01-18.
+ * Created by USER on 2018-01-24.
  */
-public class Application {
+public class AppCredential {
     public static void main(String[] args) {
-
         Session session =  HibernateUtil.getSessionFactory().openSession();
 
         try {
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
 
             User user = new User();
+            user.setAge(33);
             user.setBirthDate(getMyBirthday());
             user.setCreatedBy("kevin");
             user.setCreatedDate(new Date());
@@ -28,19 +30,18 @@ public class Application {
             user.setLastUpdateBy("kevin");
             user.setLastUpdateDate(new Date());
 
-            session.save(user);
-            session.getTransaction().commit();
-            session.refresh(user);
-            System.out.println(user.toString());
+            Credential credential = new Credential();
+            credential.setPassword("kevinspassword");
+            credential.setUsername("kmb385");
 
-            /*TimeTest test = new TimeTest(new Date());
+            credential.setUser(user);
+            user.setCredential(credential);
 
-            session.getTransaction().begin();
-            session.save(test);
-            session.getTransaction().commit();
+            session.save(credential);
+            transaction.commit();
 
-            session.refresh(test);
-            System.out.println(test.toString());*/
+            User dbUser = session.get(User.class, credential.getUser().getUserId());
+            System.out.println(dbUser.getFirstName());
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -48,16 +49,13 @@ public class Application {
             session.close();
             HibernateUtil.getSessionFactory().close();
         }
-
-
     }
-
 
     private static Date getMyBirthday() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 1984);
-        calendar.set(Calendar.MONTH, 6);
-        calendar.set(Calendar.DATE, 19);
+        calendar.set(Calendar.YEAR, 1974);
+        calendar.set(Calendar.MONTH, 1);
+        calendar.set(Calendar.DATE, 12);
         return calendar.getTime();
     }
 }

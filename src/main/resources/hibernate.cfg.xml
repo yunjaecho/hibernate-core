@@ -25,6 +25,12 @@
         <property name="show_sql">true</property>
 
         <mapping class="com.infiniteskills.data.entiity.User" />
+        <mapping class="com.infiniteskills.data.entiity.TimeTest" />
+        <mapping class="com.infiniteskills.data.entiity.Address" />
+        <mapping class="com.infiniteskills.data.entiity.Bank" />
+        <mapping class="com.infiniteskills.data.entiity.Credential" />
+        <mapping class="com.infiniteskills.data.entiity.Account" />
+        <mapping class="com.infiniteskills.data.entiity.Transaction" />
 
     </session-factory>
 
