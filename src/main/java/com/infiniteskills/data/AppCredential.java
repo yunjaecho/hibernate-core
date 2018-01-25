@@ -27,8 +27,8 @@ public class AppCredential {
             user.setEmailAddress("kmb385@yahoo.com");
             user.setFirstName("Kevin");
             user.setLastName("Bowersox");
-            user.setLastUpdateBy("kevin");
-            user.setLastUpdateDate(new Date());
+            user.setLastUpdatedBy("kevin");
+            user.setLastUpdatedDate(new Date());
 
             Credential credential = new Credential();
             credential.setPassword("kevinspassword");

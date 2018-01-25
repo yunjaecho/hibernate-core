@@ -23,8 +23,8 @@ public class AppUser {
             Address address2 = new Address();
             setAddressFields(address);
             setAddressFields2(address2);
-            user.getAddress().add(address);
-            user.getAddress().add(address2);
+            user.getAddresses().add(address);
+            user.getAddresses().add(address2);
 
             setUserFields(user);
 
@@ -57,8 +57,8 @@ public class AppUser {
         user.setEmailAddress("kmb385@yahoo.com");
         user.setFirstName("Kevin");
         user.setLastName("Bowersox");
-        user.setLastUpdateBy("kevin");
-        user.setLastUpdateDate(new Date());
+        user.setLastUpdatedBy("kevin");
+        user.setLastUpdatedDate(new Date());
     }
 
     private static void setAddressFields(Address address) {

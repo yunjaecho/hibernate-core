@@ -31,6 +31,7 @@
         <mapping class="com.infiniteskills.data.entiity.Credential" />
         <mapping class="com.infiniteskills.data.entiity.Account" />
         <mapping class="com.infiniteskills.data.entiity.Transaction" />
+        <mapping class="com.infiniteskills.data.entiity.Budget" />
 
     </session-factory>
 
