@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Data
-@Entity
-@Table(name = "BUDGET")
+//@Entity
+//@Table(name = "BUDGET")
 public class BudgetTransaction {
 
     private Long transactionId;
