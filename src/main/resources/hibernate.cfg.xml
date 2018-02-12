@@ -32,6 +32,10 @@
         <mapping class="com.infiniteskills.data.entiity.Account" />
         <mapping class="com.infiniteskills.data.entiity.Transaction" />
         <mapping class="com.infiniteskills.data.entiity.Budget" />
+        <mapping class="com.infiniteskills.data.entiity.Currency" />
+        <mapping class="com.infiniteskills.data.entiity.Market" />
+        <mapping class="com.infiniteskills.data.entiity.Stock" />
+        <mapping class="com.infiniteskills.data.entiity.Bond" />
 
     </session-factory>
 

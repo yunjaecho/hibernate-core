@@ -9,7 +9,7 @@
             <property name="javax.persistence.jdbc.password" value="infinite"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ifinances?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>

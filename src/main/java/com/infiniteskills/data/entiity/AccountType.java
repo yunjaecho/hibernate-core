@@ -1,25 +1,10 @@
 package com.infiniteskills.data.entiity;
 
-import lombok.Data;
-
-import javax.persistence.*;
-import java.util.Date;
-
-@Data
-//@Entity
-//@Table(name = "ACCOUNT_TYPE")
-public class AccountType {
-    private Long accountTypeId;
-
-    private String name;
-
-    private Date lastUpdatedDate;
-
-    private String lastUpdatedBy;
-
-    private Date createdDate;
-
-    private String createdBy;
-
-
+/**
+ * Created by USER on 2018-02-12.
+ */
+public enum AccountType {
+    LOAN,
+    SVINGS,
+    CHECKING
 }

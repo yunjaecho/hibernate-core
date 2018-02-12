@@ -26,8 +26,9 @@ public class Account {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "account")
     private List<Transaction> transactions = new ArrayList<Transaction>();
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "ACCOUNT_TYPE")
-    private String accountTpe;
+    private AccountType accountTpe;
 
     @Column(name = "NAME")
     private String name;
