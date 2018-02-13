@@ -11,12 +11,13 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(name = "BOND")
+@DiscriminatorValue("BND")
+//@Table(name = "BOND")
 public class Bond extends Investment {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "BOND_ID")
-    private Long bondId;
+    private Long bondId;*/
 
     @Column(name = "VALUE")
     private BigDecimal value;

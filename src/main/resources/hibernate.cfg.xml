@@ -36,7 +36,7 @@
         <mapping class="com.infiniteskills.data.entiity.Market" />
         <mapping class="com.infiniteskills.data.entiity.Stock" />
         <mapping class="com.infiniteskills.data.entiity.Bond" />
-
+        <mapping class="com.infiniteskills.data.entiity.Portfolio" />
     </session-factory>
 
 </hibernate-configuration>

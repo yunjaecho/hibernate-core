@@ -11,12 +11,13 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(name = "STOCK")
+@DiscriminatorValue("ST")
+//@Table(name = "STOCK")
 public class Stock extends Investment {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "STOCK_ID")
-    private Long stockId;
+    private Long stockId;*/
 
     @Column(name = "SHARE_PRICE")
     private BigDecimal sharePrice;
