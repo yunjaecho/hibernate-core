@@ -9,6 +9,9 @@ import java.util.*;
 @Data
 @Entity
 @Table(name = "ACCOUNT")
+@NamedQueries({
+        @NamedQuery(name = "Account.largeDeposits", query = "select distinct t.account from Transaction t where t.amount > 20 and lower(t.transactionType) = 'deposit' ")
+})
 public class Account {
 
     @Id
@@ -16,7 +19,8 @@ public class Account {
     @Column(name = "ACCOUNT_ID")
     private Long accountId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    // 조인시 지연실행 (fetch = FetchType.LAZY) 값을 가져올때 그때 조회
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "USER_ACCOUNT", joinColumns = @JoinColumn(name = "ACCOUNT_ID"),
         inverseJoinColumns = @JoinColumn(name = "USER_ID"))
     private Set<User> users = new HashSet<User>();
